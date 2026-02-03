@@ -20,8 +20,9 @@ public class TarefaService {
             return tarefasClient.gravarTarefa(dto, token);
     }
 
-
-    public List<TarefasDTOResponse> buscaTarefasAgendadasPorPeriodo(LocalDateTime dataInicial, LocalDateTime dataFinal, String token){
+    public List<TarefasDTOResponse> buscaTarefasAgendadasPorPeriodo(LocalDateTime dataInicial,
+                                                                    LocalDateTime dataFinal,
+                                                                    String token){
         return tarefasClient.buscaListaDeTarefasPorPeriodo(dataInicial, dataFinal, token);
     }
 
@@ -29,15 +30,20 @@ public class TarefaService {
         return tarefasClient.buscaTarefasPorEmail(token);
     }
 
-    public void deletaTarefaPorId(String id, String token){
+    public void deletaTarefaPorId(String id,
+                                  String token){
         tarefasClient.deletaTarefaPorId(id, token);
     }
 
-    public TarefasDTOResponse alteraStatus(StatusNotificacaoEnum status, String id, String token){
+    public TarefasDTOResponse alteraStatus(StatusNotificacaoEnum status,
+                                           String id,
+                                           String token){
         return tarefasClient.alteraStatusNotificacao(status, id, token);
     }
 
-    public TarefasDTOResponse updateTarefas(TarefasDTORequest dto, String id, String token) {
+    public TarefasDTOResponse updateTarefas(TarefasDTORequest dto,
+                                            String id,
+                                            String token) {
         return tarefasClient.upadteTarefas(dto, id, token);
     }
 }

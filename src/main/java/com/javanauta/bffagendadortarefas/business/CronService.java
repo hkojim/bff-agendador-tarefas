@@ -27,7 +27,7 @@ public class CronService {
     @Value("${usuario.senha}")
     private String senha;
 
-    @Scheduled(cron=("${cron.horario}"))
+    @Scheduled(cron="${cron.horario}")
     public void buscaTarefasProximaHora(){
         String token = login(converterParaRequestDTO());
         log.info("Iniciada a busca de tarefas");
@@ -38,10 +38,10 @@ public class CronService {
 
         List<TarefasDTOResponse> listaTarefas = tarefaService.buscaTarefasAgendadasPorPeriodo(horaAtual, horaFutura,token);
         log.info("Tarefas encontradas" + listaTarefas);
-        listaTarefas.forEach(tarefa -> {emailService.enviaEmail(tarefa);
+        listaTarefas.forEach(tarefa -> {
+            emailService.enviaEmail(tarefa);
             log.info("Email enviado para o usuário" +tarefa.getId());
-            tarefaService.alteraStatus(StatusNotificacaoEnum.NOTIFICADO, tarefa.getId(),
-                    token);
+            tarefaService.alteraStatus(StatusNotificacaoEnum.NOTIFICADO, tarefa.getId(), token);
         });
         log.info("Finalizada a busca e notificação de tarefas");
     }

@@ -1,4 +1,4 @@
-package com.javanauta.bffagendadortarefas.infrastructure.client.security;
+package com.javanauta.bffagendadortarefas.infrastructure.security;
 
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
 import io.swagger.v3.oas.annotations.security.SecurityScheme;
