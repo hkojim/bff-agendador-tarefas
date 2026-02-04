@@ -1,15 +1,9 @@
 package com.javanauta.bffagendadortarefas.infrastructure.client.config;
 
-import com.javanauta.bffagendadortarefas.infrastructure.exceptions.BusinessException;
-import com.javanauta.bffagendadortarefas.infrastructure.exceptions.ConflictException;
+import com.javanauta.bffagendadortarefas.infrastructure.exceptions.*;
 import com.javanauta.bffagendadortarefas.infrastructure.exceptions.IllegalArgumentException;
-import com.javanauta.bffagendadortarefas.infrastructure.exceptions.ResourceNotFoundException;
-import com.javanauta.bffagendadortarefas.infrastructure.exceptions.UnauthorizedException;
 import feign.Response;
 import feign.codec.ErrorDecoder;
-import org.apache.commons.lang3.concurrent.ConcurrentException;
-import org.apache.coyote.BadRequestException;
-
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
